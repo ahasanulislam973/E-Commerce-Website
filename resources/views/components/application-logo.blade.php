@@ -1,0 +1,1 @@
+<img src="{{ asset('frontend/logo/royalPuffBdLogo.png') }}" width="100px">
