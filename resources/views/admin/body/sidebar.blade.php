@@ -24,7 +24,7 @@
 
         <li>
             <a href="javascript:;" class="has-arrow">
-                <div class="parent-icon"><i class='bx bx-home-circle'></i>
+                <div class="parent-icon"><i class='bx bxs-group'></i>
                 </div>
                 <div class="menu-title">Customer Management</div>
             </a>
@@ -210,6 +210,18 @@
                 </li>
             </ul>
         </li>
+
+        <li>
+            <a href="javascript:;" class="has-arrow">
+                <div class="parent-icon"><i class='bx bxs-package'></i></div> <!-- Updated Icon -->
+                <div class="menu-title">Manage Product</div>
+            </a>
+            <ul>
+                <li> <a href="{{ route('all.productManagement') }}"><i class="bx bx-right-arrow-alt"></i>All Product Management</a></li>
+                <li> <a href="{{ route('add.productManagement') }}"><i class="bx bx-right-arrow-alt"></i>Add Product Management</a></li>
+            </ul>
+        </li>
+
 
     </ul>
     <!--end navigation-->

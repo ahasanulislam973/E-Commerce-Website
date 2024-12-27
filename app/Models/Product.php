@@ -34,4 +34,9 @@ class Product extends Model
     {
         return $this->belongsTo(Subcategory::class, 'subcategory_id');
     }
+
+    public function productManagements()
+    {
+        return $this->hasMany(ProductManagement::class);
+    }
 }

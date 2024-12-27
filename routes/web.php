@@ -16,6 +16,7 @@ use App\Http\Controllers\Backend\CouponController;
 use App\Http\Controllers\Backend\OrderController;
 use App\Http\Controllers\Backend\ReportController;
 use App\Http\Controllers\Backend\AdminUserController;
+use App\Http\Controllers\Backend\ProductManagementController;
 
 use App\Http\Controllers\Frontend\IndexController;
 use App\Http\Controllers\Frontend\CartController;
@@ -80,6 +81,20 @@ Route::get('/admin/login', [AdminController::class, 'AdminLogin'])->middleware(R
 Route::middleware(['auth', 'role:admin'])->group(function () {
 
 
+    // Product Management
+    Route::controller(ProductManagementController::class)->group(function () {
+        Route::get('all/productManagement', 'showProductCalculations')->name('all.productManagement');
+        Route::get('add/productManagement', 'AddProduct')->name('add.productManagement');
+        Route::post('store/productManagement', 'StoreProduct')->name('store.productManagement');
+        Route::get('/edit/user/{id}', 'EditUser')->name('edit.user');
+        Route::post('/update/user', 'UpdateUser')->name('update.user');
+        Route::get('/delete/user/{id}', 'DeleteUser')->name('delete.user');
+
+        Route::get('/export/productCalculations', 'exportProductCalculations')->name('export.productCalculations');
+
+    });    
+    
+    
     // User All Route
     Route::controller(AdminUserController::class)->group(function () {
         Route::get('all/user', 'AllUser')->name('all.user');
